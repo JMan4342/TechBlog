@@ -1,34 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/css/jass.css" />
+  </head>
 
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <body>
+    <header class="display-flex justify-space-between align-center p-2">
+      <nav>
+        {{#if logged_in}}
+          <button class="btn" id="home">Home</button>
+          <button class="btn" id="dashboard">Dashboard</button>
+          <button class="btn" id="logout">Logout</button>
+        {{else}}
+          <button class="btn" id="home">Home</button>
+          <button class="btn" id="dashboard">Dashboard</button>
+          <button class="btn" id="logout">Login</button>
+        {{/if}}
+      </nav>
+      <h1>
+        The Tech Blog
+      </h1>
+    </header>
+    <main class="container container-fluid mt-5">
+      {{{body}}}
+    </main>
+    <footer>
+
+    </footer>
+
     {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+      <script src="/js/logout.js"></script>
     {{/if}}
-    <h1>
-      The Tech Blog
-    </h1>
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
 </html>
