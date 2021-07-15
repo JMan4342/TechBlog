@@ -4,36 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Blog</title>
-    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="../../public/css/style" />
   </head>
 
-  <body>
-    <header class="display-flex justify-space-between align-center p-2">
-      <nav>
-        {{#if logged_in}}
-          <button class="btn" id="home">Home</button>
-          <button class="btn" id="dashboard">Dashboard</button>
-          <button class="btn" id="logout">Logout</button>
-        {{else}}
-          <button class="btn" id="home">Home</button>
-          <button class="btn" id="dashboard">Dashboard</button>
-          <button class="btn" id="logout">Login</button>
-        {{/if}}
-      </nav>
-      <h1>
-        The Tech Blog
-      </h1>
+  <body class="bg-primary m-5">
+    <nav>
+      <a href="../layouts/main.handlebars">Home</a> |
+      <a href="../dashboard.handlebars">Dashboard</a> |
+      <a href="../login.handlebars" id="logLink">Login</a>
+    </nav>
+    <header>
+      <h1 id="header">The Tech Blog</h1>
     </header>
-    <main class="container container-fluid mt-5">
+    <main>
       {{{body}}}
     </main>
-    <footer>
 
-    </footer>
-
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
+    <script src="./assets/js/script.js"></script>
   </body>
 
 </html>
