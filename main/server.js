@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 // const session = require('express-session');
 // const Handlebars = require("handlebars");
 // const { Sequelize } = require('sequelize');
-// const mysql = require('mysql2');
+const mysql = require('mysql2');
 // require('dotenv').config();
 // const bcrypt = require('bcrypt');
 // const connect = require("connect");
