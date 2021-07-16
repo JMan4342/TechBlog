@@ -39,28 +39,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-// app.get("/", function (req, res) {
-//   res.render("home");
-// });
-// app.get("/createAcct", function (req, res) {
-//   res.render("createAcct");
-// });
-// app.get("/dashboard", function (req, res) {
-//   res.render("dashboard");
-// });
-// app.get("/login", function (req, res) {
-//   res.render("login");
-// });
-// app.get("/myPostDetails", function (req, res) {
-//   res.render("myPostDetails");
-// });
-// app.get("/newPost", function (req, res) {
-//   res.render("newPost");
-// });
-// app.get("/postDetails", function (req, res) {
-//   res.render("postDetails");
-// });
-
 //   sequelize.sync({ force: false }).then(() => {
 app.listen(PORT, () => console.log("Now listening"));
 //   });
