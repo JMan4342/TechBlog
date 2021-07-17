@@ -20,8 +20,8 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        max: 15,
-        min: 8,
+        max: 16,
+        min: 6,
       },
     },
   },
@@ -29,7 +29,7 @@ User.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: "User",
+    modelName: "user",
   }
 );
 

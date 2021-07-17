@@ -1,7 +1,15 @@
 const router = require("express").Router();
+const { User, Blog } = require("../models");
 
-router.get("/", function (req, res) {
-  res.render("home");
+router.get("/", async function (req, res) {
+try {
+  const blogs = await Blog.findAll({include: [User]})
+  res.render("home", {blogs});
+
+} catch (err) {
+  console.log(err)
+  res.json(err)
+}
 });
 router.get("/createAcct", function (req, res) {
   res.render("createAcct");

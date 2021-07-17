@@ -28,7 +28,7 @@ Blog.init(
   {
     sequelize,
     freezeTableName: true,
-    modelName: "Blog",
+    modelName: "blog",
   }
 );
 
