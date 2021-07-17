@@ -3,14 +3,14 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 // const session = require('express-session');
 // const Handlebars = require("handlebars");
-// const { Sequelize } = require('sequelize');
-const mysql = require('mysql2');
+const { Sequelize } = require('sequelize');
+const mysql = require("mysql2");
 // require('dotenv').config();
 // const bcrypt = require('bcrypt');
 // const connect = require("connect");
 
-const routes = require('./controllers');
-// const sequelize = require('./config/connection');
+const routes = require("./controllers");
+const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -39,6 +39,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-//   sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => console.log("Now listening"));
-//   });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
+});
