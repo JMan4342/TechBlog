@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Blog } = require("../../models");
+const { User, Blog, Comment } = require("../../models");
 
 router.get("/", async (req, res) => {
     try {
@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
   router.put("/:id", async (req, res) => {
     try {
       const blogData = await Blog.update(
-        { title: req.body.title, blogContent: req.body.blogContent },
+        { title: req.body.title, content: req.body.content },
         { where: { id: req.params.id } }
       );
   

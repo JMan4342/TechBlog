@@ -19,10 +19,10 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        max: 16,
-        min: 6,
-      },
+      // validate: {
+      //   max: 16,
+      //   min: 6,
+      // },
     },
   },
   {

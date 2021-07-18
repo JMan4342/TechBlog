@@ -2,15 +2,12 @@ console.log("hello");
 const signupFormHandler = async (e) => {
   e.preventDefault();
   console.log("inside function");
-  const username = document.getElementById("create-username").value.trim();
-  const password = document.getElementById("create-password").value.trim();
+  const content = document.getElementById("commentContent").value.trim();
 
-  if (username && password) {
-    const response = await fetch("/api/user/", {
+    const response = await fetch("/api/blog/", {
       method: "POST",
       body: JSON.stringify({
-        username,
-        password,
+        content,
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -20,6 +17,6 @@ const signupFormHandler = async (e) => {
       alert(response.statusText);
     }
   }
-};
 
-document.getElementById("signup").addEventListener("click", signupFormHandler);
+
+document.getElementById("postComment").addEventListener("click", signupFormHandler);
