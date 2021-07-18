@@ -16,7 +16,7 @@ Blog.init(
       allowNull: false,
       unique: true,
     },
-    blogContent: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

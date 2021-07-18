@@ -1,16 +1,20 @@
 <div id="blogDetails">
   <header>
-    <h2>Blog Post Title</h2>
-    <p>Posted by {{username}} on {{date}}</p>
+    <h2>{{blog.title}}</h2>
+    <p>Posted by {{blog.user.username}} on {{blog.date}}</p>
   </header>
   <main>
-    <p>Blog content</p>
+    <p>{{blog.content}}</p>
   </main>
 </div>
 
 <div id="userComment">
-  <h3>{{username}} commented on {{date}}</h3>
-  <p>Comment content</p>
+  {{#each comments as |comment|}}
+
+    <h3>{{comment.user.username}} commented on {{comment.date}}</h3>
+    <p>{{comment.content}}</p>
+  {{/each}}
+
 </div>
 
 <form id="commentPost">

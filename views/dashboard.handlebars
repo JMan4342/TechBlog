@@ -1,9 +1,12 @@
+{{!-- Show individual blog posts after login --}}
 <div id="myPost">
+  {{#each blogs as |blog|}}
   <header>
-    <h2>Blog Post 1</h2>
-    <p>Posted on {{date}}</p>
+    <h3>{{blog.title}}</h3>
+    <p>Posted by {{blog.user.username}} on {{blog.date}}</p>
   </header>
   <main>
-    <p>Blog content</p>
+    <p>{{blog.content}}</p>
   </main>
+  {{/each}}
 </div>
