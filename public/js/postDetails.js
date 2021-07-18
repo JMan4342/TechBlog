@@ -4,7 +4,9 @@ const signupFormHandler = async (e) => {
   console.log("inside function");
   const content = document.getElementById("commentContent").value.trim();
 
-    const response = await fetch("/api/blog/", {
+  if (content) {
+
+    const response = await fetch("/api/comment/", {
       method: "POST",
       body: JSON.stringify({
         content,
@@ -17,6 +19,6 @@ const signupFormHandler = async (e) => {
       alert(response.statusText);
     }
   }
-
+}
 
 document.getElementById("postComment").addEventListener("click", signupFormHandler);

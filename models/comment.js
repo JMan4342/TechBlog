@@ -19,6 +19,13 @@ Comment.init(
     date: {
       type: DataTypes.DATE,
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
