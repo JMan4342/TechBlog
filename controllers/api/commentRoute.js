@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
   router.put("/:id", async (req, res) => {
     try {
       const commentData = await Comment.update(
-        { title: req.body.title, commentContent: req.body.commentContent },
+        { commentContent: req.body.commentContent },
         { where: { id: req.params.id } }
       );
   

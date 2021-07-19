@@ -31,7 +31,6 @@ Blog.init(
         key: 'id',
       },
     },
-
   },
   {
     sequelize,

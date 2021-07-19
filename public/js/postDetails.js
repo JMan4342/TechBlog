@@ -6,7 +6,7 @@ const signupFormHandler = async (e) => {
 
   if (content) {
 
-    const response = await fetch("/api/comment/", {
+    const response = await fetch("/api/comment", {
       method: "POST",
       body: JSON.stringify({
         content,

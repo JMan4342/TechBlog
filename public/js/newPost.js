@@ -6,7 +6,7 @@ const signupFormHandler = async (e) => {
   const content = document.getElementById("blogContent").value.trim();
 
   if (title && content) {
-    const response = await fetch("/api/blog/", {
+    const response = await fetch("/api/blog", {
       method: "POST",
       body: JSON.stringify({
         title,
