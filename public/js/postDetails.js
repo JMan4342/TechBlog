@@ -1,24 +1,27 @@
 console.log("hello");
-const signupFormHandler = async (e) => {
+const commentFormHandler = async (e) => {
+
   e.preventDefault();
+
   console.log("inside function");
-  const content = document.getElementById("commentContent").value.trim();
 
-  if (content) {
+  const commentContent = document.getElementById("commentContent").value.trim();
 
-    const response = await fetch("/api/comment", {
+  if (commentContent) {
+
+    const response = await fetch("/api/comment/post", {
       method: "POST",
       body: JSON.stringify({
-        content,
+        commentContent,
       }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Comment failed to post");
     }
   }
 }
 
-document.getElementById("postComment").addEventListener("click", signupFormHandler);
+document.getElementById("postComment").addEventListener("click", commentFormHandler);
