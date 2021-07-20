@@ -2,22 +2,26 @@ const router = require("express").Router();
 const { User, Blog } = require("../models");
 const withAuth = require('../utils/auth')
 
-router.get("/", withAuth, async function (req, res) {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['username', 'ASC']],
-    });
+router.get("/", function (req, res) {
+  res.render("/");
+})
 
-    const users = userData.map((project) => project.get({ plain: true }));
+// router.get("/", withAuth, async function (req, res) {
+//   try {
+//     const userData = await User.findAll({
+//       attributes: { exclude: ['password'] },
+//       order: [['username', 'ASC']],
+//     });
 
-    res.render('home', {
-      users,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }});
+//     const users = userData.map((project) => project.get({ plain: true }));
+
+//     res.render('home', {
+//       users,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }});
 
 router.get("/createAcct", function (req, res) {
   res.render("createAcct");
