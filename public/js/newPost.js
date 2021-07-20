@@ -1,12 +1,15 @@
 console.log("hello");
-const signupFormHandler = async (e) => {
+const postFormHandler = async (e) => {
+
   e.preventDefault();
+
   console.log("inside function");
+
   const title = document.getElementById("titlePost").value.trim();
   const content = document.getElementById("blogContent").value.trim();
 
   if (title && content) {
-    const response = await fetch("/api/blog", {
+    const response = await fetch("/api/blog/post", {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -17,9 +20,9 @@ const signupFormHandler = async (e) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Blog failed to post");
     }
   }
 };
 
-document.getElementById("postBlog").addEventListener("click", signupFormHandler);
+document.getElementById("postBlog").addEventListener("click", postFormHandler);

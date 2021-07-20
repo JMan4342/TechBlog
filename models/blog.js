@@ -17,9 +17,8 @@ Blog.init(
       unique: true,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
-      unique: true,
     },
     date: {
       type: DataTypes.DATE,

@@ -4,7 +4,8 @@ const { User, Blog, Comment } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-      // include: [{ model: Blog }, { model: Comment }],
+      subQuery: false,
+      include: [{ model: Blog }, { model: Comment }],
     });
     res.status(200).json(userData);
   } catch (err) {
@@ -15,7 +16,8 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-      // include: [{ model: Blog }, { model: Comment }],
+      subQuery: false,
+      include: [{ model: Blog }, { model: Comment }],
     });
 
     if (!userData) {
@@ -30,7 +32,6 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log(req.body)
   try {
     const userData = await User.create(req.body);
     res.status(200).json(userData);
@@ -82,7 +83,7 @@ router.delete("/:id", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { name: req.body.username },
+      where: { username: req.body.username },
     });
     if (!userData) {
       res
