@@ -79,6 +79,8 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// *******NEW WORKING CODE BELOW**********
+
 // Route to verify entered username and password match for login page
 router.post("/login", async (req, res) => {
   try {
@@ -107,6 +109,16 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 
