@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Blog } = require("../models");
+const { User, Blog, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async function (req, res) {
@@ -77,21 +77,20 @@ router.get("/postDetails/:id", async function (req, res) {
   if (!req.session.logged_in) {
     res.redirect("login");
     return;
-}
-try {
-
-  const blogData = await Blog.findOne({
-    where: { id: '${id}' },
-  });
-  const blogs = blogData.map((project) => project.get({ plain: true }));
-  console.log(blogs);
-  res.render("postDetails/:id", {
-    blogs,
-    comments,
-    logged_in: req.session.logged_in,
-  });
+  }
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: { model: Comment },
+    });
+    // const blogs = blogData.map((project) => project.get({ plain: true }));
+    res.render("postDetails", {
+      blog: blogData.get(),
+      comments: blogData.get().comments,
+      logged_in: req.session.logged_in,
+    });
+    console.log(blogData)
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json(err);
   }
 });

@@ -28,11 +28,12 @@ router.get("/", async (req, res) => {
   router.post("/post", async (req, res) => {
     try {
       const comment = {...req.body}
-      comment.blogId = req.session.blog_id;
-      comment.userID = req.session.user_id;
+      comment.blogId = req.session.user_id;
+      comment.userId = req.session.user_id;
       const commentData = await Comment.create(comment);
       res.status(200).json(commentData);
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
   });
