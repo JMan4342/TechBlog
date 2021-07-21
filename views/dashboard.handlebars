@@ -1,9 +1,11 @@
 {{!-- Show individual blog posts after login --}}
 <div id="myPost">
+    <a href="../newPost">Create New Post</a>
+
   {{#each blogs as |blog|}}
   <header>
-    <h3>{{blog.title}}</h3>
-    <p>Posted by {{blog.user.username}} on {{blog.date}}</p>
+    <a href='/myPostDetails/{{blog.id}}'>{{blog.title}}</a>
+    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
   </header>
   <main>
     <p>{{blog.content}}</p>

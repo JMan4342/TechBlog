@@ -1,7 +1,7 @@
 <div id="blogDetails">
   <header>
     <h2>{{blog.title}}</h2>
-    <p>Posted by {{blog.user.username}} on {{blog.date}}</p>
+    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
   </header>
   <main>
     <p>{{blog.content}}</p>
@@ -11,7 +11,7 @@
 <div id="userComment">
   {{#each comments as |comment|}}
 
-    <h3>{{comment.user.username}} commented on {{comment.date}}</h3>
+    <h3>{{comment.userId}} commented on {{comment.date}}</h3>
     <p>{{comment.content}}</p>
   {{/each}}
 

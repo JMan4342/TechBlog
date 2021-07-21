@@ -1,8 +1,8 @@
 <div id="blogPosts">
   {{#each blogs as |blog|}}
   <header>
-    <h3>{{blog.title}}</h3>
-    <p>Posted by {{blog.user.username}} on {{blog.date}}</p>
+    <a href='/postDetails/{{blog.id}}'>{{blog.title}}</a>
+    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
   </header>
   <main>
     <p>{{blog.content}}</p>

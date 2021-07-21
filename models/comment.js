@@ -18,18 +18,20 @@ Comment.init(
     },
     date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     },
     userId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id'
       },
     },
   },
   {
     sequelize,
     freezeTableName: true,
+    // timestamps: false,
     modelName: "comment",
   }
 );

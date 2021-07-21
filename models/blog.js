@@ -22,6 +22,7 @@ Blog.init(
     },
     date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     },
     userId: {
       type: DataTypes.INTEGER,
@@ -34,6 +35,7 @@ Blog.init(
   {
     sequelize,
     freezeTableName: true,
+    // timestamps: false,
     modelName: "blog",
   }
 );
