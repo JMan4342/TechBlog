@@ -84,6 +84,7 @@ router.delete("/:id", async (req, res) => {
 // Route to verify entered username and password match for login page
 router.post("/login", async (req, res) => {
   try {
+    console.log("1");
     const userData = await User.findOne({
       where: { username: req.body.username },
     });
@@ -100,6 +101,8 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
+    console.log("2");
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;

@@ -22,7 +22,7 @@ User.hasMany(Comment, {
     onDelete: "CASCADE"
 })
 
-
+// Blog.hasMany()
 module.exports = {
     User,
     Blog,
