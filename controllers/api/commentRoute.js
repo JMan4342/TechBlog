@@ -27,7 +27,10 @@ router.get("/", async (req, res) => {
   
   router.post("/post", async (req, res) => {
     try {
-      const commentData = await Comment.create(req.body);
+      const comment = {...req.body}
+      comment.blogId = req.session.blog_id;
+      comment.userID = req.session.user_id;
+      const commentData = await Comment.create(comment);
       res.status(200).json(commentData);
     } catch (err) {
       res.status(400).json(err);

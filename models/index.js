@@ -28,7 +28,7 @@ Comment.belongsTo(Blog, {
 })
 
 Blog.hasMany(Comment, {
-    foreignKey: "blogID",
+    foreignKey: "blogId",
     onDelete: "CASCADE"
 })
 

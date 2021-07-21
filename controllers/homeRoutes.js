@@ -73,14 +73,27 @@ router.get("/newPost", function (req, res) {
 });
 
 // Redirect to login page if user not logged-in during session
-router.get("/postDetails", function (req, res) {
+router.get("/postDetails/:id", async function (req, res) {
   if (!req.session.logged_in) {
     res.redirect("login");
     return;
-  }
-  res.render("postDetails", {
+}
+try {
+
+  const blogData = await Blog.findOne({
+    where: { id: '${id}' },
+  });
+  const blogs = blogData.map((project) => project.get({ plain: true }));
+  console.log(blogs);
+  res.render("postDetails/:id", {
+    blogs,
+    comments,
     logged_in: req.session.logged_in,
   });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
