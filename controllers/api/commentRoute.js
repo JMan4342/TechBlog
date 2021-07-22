@@ -25,10 +25,11 @@ router.get("/", async (req, res) => {
     }
   });
   
+  // Create comments and associate with user and blog
   router.post("/post", async (req, res) => {
     try {
-      const comment = {...req.body}
-      comment.blogId = req.session.user_id;
+      const comment = {...req.body};
+      comment.blogId;
       comment.userId = req.session.user_id;
       const commentData = await Comment.create(comment);
       res.status(200).json(commentData);

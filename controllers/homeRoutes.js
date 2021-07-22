@@ -82,7 +82,6 @@ router.get("/postDetails/:id", async function (req, res) {
     const blogData = await Blog.findByPk(req.params.id, {
       include: { model: Comment },
     });
-    // const blogs = blogData.map((project) => project.get({ plain: true }));
     res.render("postDetails", {
       blog: blogData.get(),
       comments: blogData.get().comments,
