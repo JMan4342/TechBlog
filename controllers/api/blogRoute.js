@@ -43,7 +43,7 @@ router.get("/", async (req, res) => {
     }
   });
   
-  router.put("/:id", async (req, res) => {
+  router.put("/update/:id", async (req, res) => {
     try {
       const blogData = await Blog.update(
         { title: req.body.title, content: req.body.content },
@@ -62,7 +62,7 @@ router.get("/", async (req, res) => {
     }
   });
   
-  router.delete("/:id", async (req, res) => {
+  router.delete("/delete/:id", async (req, res) => {
     try {
       const blogData = await Blog.destroy({
         where: {
@@ -78,6 +78,7 @@ router.get("/", async (req, res) => {
       res.status(200).json(blogData);
     } catch (err) {
       res.status(500).json(err);
+      console.log(err)
     }
   });
   

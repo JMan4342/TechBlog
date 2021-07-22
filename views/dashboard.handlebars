@@ -1,14 +1,17 @@
-{{!-- Show individual blog posts after login --}}
+{{! Show individual blog posts after login }}
 <div id="myPost">
-    <a href="../newPost">Create New Post</a>
+  <a href="../newPost">Create New Post</a>
 
   {{#each blogs as |blog|}}
-  <header>
-    <a href='/editPost/{{blog.id}}'>{{blog.title}}</a>
-    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
-  </header>
-  <main>
-    <p>{{blog.content}}</p>
-  </main>
+    <header>
+      <div>
+        <a href="/editPost/{{blog.id}}">{{blog.title}}</a>
+        <p>Click to edit</p>
+      </div>
+      <p>Posted by {{blog.userId}} on {{blog.date}}</p>
+    </header>
+    <main>
+      <p>{{blog.content}}</p>
+    </main>
   {{/each}}
 </div>

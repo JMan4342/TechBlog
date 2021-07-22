@@ -18,7 +18,7 @@ const postFormHandler = async (e) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       alert("Blog failed to post");
     }

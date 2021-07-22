@@ -5,23 +5,25 @@ const editFormHandler = async (e) => {
 
   e.preventDefault();
 
-  console.log("inside function");
+  const title = document.getElementById("editTitle").value.trim();
+  const content = document.getElementById("editBlog").value.trim();
+  const id = document.getElementById("editBlogPost").dataset.blogId;
+  console.log(id)
 
-  const commentContent = document.getElementById("commentContent").value.trim();
 
-  if (commentContent) {
-
-    const response = await fetch("/api/comment/post/", {
-      method: "POST",
+  if (title && content) {
+    const response = await fetch("/api/blog/update/" + id, {
+      method: "PUT",
       body: JSON.stringify({
-        commentContent,
+        title,
+        content,
       }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
-      alert("Post failed to edit");
+      alert("Blog failed to update");
     }
   }
 }
@@ -29,7 +31,27 @@ const editFormHandler = async (e) => {
 // Delete personal post
 const deleteFormHandler = async (e) => {
     e.preventDefault();
-
+    const title = document.getElementById("editTitle").value.trim();
+    const content = document.getElementById("editBlog").value.trim();
+    const id = document.getElementById("editBlogPost").dataset.blogId;
+    console.log(id)
+  
+  
+    if (title && content) {
+      const response = await fetch("/api/blog/delete/" + id, {
+      method: "DEL",
+      body: JSON.stringify({
+        title,
+        content,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    } else {
+      alert("Blog failed to delete");
+    }
+  }
 }
 
 document.getElementById("edit").addEventListener("click", editFormHandler);
