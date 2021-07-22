@@ -51,14 +51,25 @@ router.get("/login", function (req, res) {
 });
 
 // Redirect to login page if user not logged-in during session
-router.get("/myPostDetails", function (req, res) {
+router.get("/editPost/:id", async function (req, res) {
   if (!req.session.logged_in) {
     res.redirect("login");
     return;
   }
-  res.render("myPostDetails", {
-    logged_in: req.session.logged_in,
-  });
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: { model: Comment },
+    });
+    res.render("editPost", {
+      blog: blogData.get(),
+      // comments: blogData.get().comments,
+      logged_in: req.session.logged_in,
+    });
+    console.log(blogData)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // Redirect to login page if user not logged-in during session

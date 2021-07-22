@@ -1,0 +1,26 @@
+<h2>Edit Your Post</h2>
+
+<form id="editBlogPost">
+  {{!-- <div class="form-group">
+    <label for="editTitle">{{blog.title}}</label>
+    <input class="form-input" type="text" name="editTitle" id="editTitle" />
+  </div> --}}
+  <p>Edit Title</p>
+  <textarea
+    name="editTitle"
+    form="editBlogPost"
+    id="editTitle"
+  >{{blog.title}}</textarea>
+  <p>Edit Content</p>
+  <textarea
+    name="editBlog"
+    form="newBlogPost"
+    id="editBlog"
+  >{{blog.content}}</textarea>
+  <div class="form-group">
+    <button class="btn btn-primary" type="click" id="edit">Update Blog</button>
+    <button class="btn btn-primary" type="click" id="delete">Delete Post</button>
+  </div>
+</form>
+
+<script src="/js/myPostDetail.js"></script>
