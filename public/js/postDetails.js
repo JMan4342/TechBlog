@@ -1,7 +1,15 @@
 console.log("hello");
+
+// const withAuth = require("../utils/auth");
+
 const commentFormHandler = async (e) => {
 
   e.preventDefault();
+  //   if (!req.session.logged_in) {
+  //   res.redirect("login");
+  //   return;
+  // }
+
 
   console.log("inside function");
 

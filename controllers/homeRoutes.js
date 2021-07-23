@@ -84,11 +84,11 @@ router.get("/newPost", function (req, res) {
 });
 
 // Redirect to login page if user not logged-in during session
-router.get("/postDetails/:id", withAuth, async function (req, res) {
-  if (!req.session.logged_in) {
-    res.redirect("login");
-    return;
-  }
+router.get("/postDetails/:id", async function (req, res) {
+  // if (!req.session.logged_in) {
+  //   res.redirect("login");
+  //   return;
+  // }
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: { model: Comment },

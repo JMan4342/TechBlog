@@ -18,10 +18,12 @@ Comment.init(
     },
     date: {
       type: DataTypes.DATEONLY,
-      defaultValue: DataTypes.NOW
+      defaultValue: DataTypes.NOW,
+      allowNull: false,
     },
     userId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id'
@@ -29,6 +31,7 @@ Comment.init(
     },
     blogId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'blog',
         key: 'id',
