@@ -10,11 +10,13 @@
 
 <div id="userComment">
   {{#each comments as |comment|}}
-
-    <h3>{{comment.userId}} commented on {{comment.date}}</h3>
-    <p>{{comment.content}}</p>
+    <header>
+      <h3>{{comment.userId}} commented on {{comment.date}}</h3>
+    </header>
+    <main>
+      <p>{{comment.commentContent}}</p>
+    </main>
   {{/each}}
-
 </div>
 
 <form id="commentPost" data-blog-id={{blog.id}}>
