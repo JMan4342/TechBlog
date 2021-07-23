@@ -4,7 +4,7 @@ const { User, Blog, Comment } = require("../../models");
 router.get("/", async (req, res) => {
     try {
       const blogData = await Blog.findAll({
-        subQuery: false,
+        // subQuery: false,
         include: {model: Comment},
       });
       res.status(200).json(blogData);
@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   router.get("/:id", async (req, res) => {
     try {
       const blogData = await Blog.findByPk(req.params.id, {
-        subQuery: false,
+        // subQuery: false,
         include: {model: Comment},
       });
   

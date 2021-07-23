@@ -19,6 +19,11 @@
   {{/each}}
 </div>
 
+
+{{#each comments}}
+    {{comments}}
+  {{/each}}
+
 <form id="commentPost" data-blog-id={{blog.id}}>
   <textarea name="commentPost" form="commentPost" id="commentContent">Enter text here</textarea>
   <div class="form-group">

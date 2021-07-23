@@ -93,11 +93,14 @@ router.get("/postDetails/:id", withAuth, async function (req, res) {
     const blogData = await Blog.findByPk(req.params.id, {
       include: { model: Comment },
     });
-    res.render("postDetails", {
-      blog: blogData.get(),
-      comments: blogData.get().comments,
-      logged_in: req.session.logged_in,
-    });
+    console.log(blogData.get().comments)
+    const blog = blogData.get({ plain: true });
+
+res.render("postDetails", {
+    blog: blog,
+    comments: blog.comments,
+    logged_in: req.session.logged_in
+});
     console.log(blogData)
   } catch (err) {
     console.log(err);
