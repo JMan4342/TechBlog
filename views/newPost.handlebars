@@ -1,14 +1,27 @@
-<h2>Create New Post</h2>
+<div class="card col-10 border-dark mb-3 mx-auto">
+  <h2 class="row justify-content-between p-3" id="cardHead">Create New Post</h2>
 
-<form id="newBlogPost">
-  <div class="form-group">
-    <label for="titlePost">Title</label>
-    <input class="form-input" type="text" name="titlePost" id="titlePost" />
-  </div>
-  <textarea name="contentPost" form="newBlogPost" id="blogContent">Enter text here</textarea>
-  <div class="form-group">
-    <button class="btn btn-primary" type="click" id="postBlog">Post Blog</button>
-  </div>
-</form>
+  <form class="mx-3" id="newBlogPost">
+    <div class="form-floating col-3">
+      <input class="form-control my-1" type="text" name="titlePost" id="titlePost" />
+      <label for="titlePost">Title</label>
+    </div>
+    <textarea
+      rows="3"
+      cols="80"
+      name="contentPost"
+      form="newBlogPost"
+      class="my-1"
+      id="blogContent"
+    >Enter text here</textarea>
+    <div class="form-group">
+      <button
+        class="btn btn-secondary btn-sm my-2"
+        type="click"
+        id="postBlog"
+      >Post Blog</button>
+    </div>
+  </form>
+</div>
 
 <script src="/js/newPost.js"></script>

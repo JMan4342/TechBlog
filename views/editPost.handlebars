@@ -1,24 +1,27 @@
-<h2>Edit Your Post</h2>
+<div class="card col-11 border-dark mb-3 mx-auto">
 
-<form id="editBlogPost" data-blog-id={{blog.id}}>
-  <p>Edit Title</p>
-  <textarea
+<h2 class="row justify-content-between px-3" id="cardHead">Edit Your Post</h2>
+
+<form class="mx-3" id="editBlogPost" data-blog-id={{blog.id}}>
+  <h5>Edit Title</h5>
+  <textarea rows="1" cols="40"
     name="editTitle"
     form="editBlogPost"
     id="editTitle"
   >{{blog.title}}</textarea>
 
-  <p>Edit Content</p>
-  <textarea
+  <h5>Edit Content</h5>
+  <textarea rows="3" cols="80"
     name="editBlog"
     form="newBlogPost"
     id="editBlog"
   >{{blog.content}}</textarea>
   
   <div class="form-group">
-    <button class="btn btn-primary" type="click" id="edit">Update Blog</button>
-    <button class="btn btn-primary" type="click" id="delete">Delete Post</button>
+    <button class="btn btn-secondary btn-sm mx-3 my-2" type="click" id="edit">Update Blog</button>
+    <button class="btn btn-secondary btn-sm mx-3 my-2" type="click" id="delete">Delete Post</button>
   </div>
 </form>
+</div>
 
 <script src="/js/editPost.js"></script>

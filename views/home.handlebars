@@ -1,8 +1,8 @@
-<div class="card col-11 border-dark mb-3" id="blogPosts">
+<div class="card col-11 border-dark mb-3 mx-auto" id="blogPosts">
   {{#each blogs}}
-  <header class="card-header row justify-content-between">
-    <h2 class="card-title col-4"><a href='/postDetails/{{id}}'>{{title}}</a></h2>
-    <p class="col-4 text-end">Posted by {{user.username}} on {{date}}</p>
+  <header class="card-header row justify-content-between " id="cardHead">
+    <h2 class="card-title col-4"><a id="titleLink" href='/postDetails/{{id}}'>{{title}}</a></h2>
+    <p class="col-4 text-end my-auto">Posted by <b>{{user.username}}</b> on <i>{{date}}</i></p>
   </header>
   <main class="card-body">
     <p>{{content}}</p>

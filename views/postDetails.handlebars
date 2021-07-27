@@ -1,18 +1,18 @@
-<div class="card col-11 border-dark mb-3">
+<div class="card col-11 border-dark mb-3 mx-auto">
   <div id="blogDetails">
-    <header class="card-header row justify-content-between">
+    <header class="row justify-content-between px-3" id="cardHead">
       <h2 class="card-title col-4">{{blog.title}}</h2>
-      <p class="col-4 text-end">Posted by {{blog.user.username}} on {{blog.date}}</p>
+      <p class="col-4 text-end my-auto">Posted by <b>{{blog.user.username}}</b> on <i>{{blog.date}}</i></p>
     </header>
-    <main class="card-body border-dark mb-2">
+    <main class="card-body border-dark">
       <p>{{blog.content}}</p>
     </main>
   </div>
 
   <div id="userComment">
     {{#each comments}}
-      <header>
-        <p class="card-subtitle mb-2">{{user.username}} commented on {{date}}</p>
+      <header id="commentHead">
+        <p class="card-subtitle px-2"><b>{{user.username}}</b> commented on <i>{{date}}</i></p>
       </header>
       <main>
         <p class="card-body">{{commentContent}}</p>
@@ -21,9 +21,8 @@
   </div>
 
   {{#if logged_in}}
-    <form id="commentPost" data-blog-id={{blog.id}}>
-      <textarea name="commentPost" form="commentPost" id="commentContent">Enter
-        text here</textarea>
+    <form class="mx-3" id="commentPost" data-blog-id={{blog.id}}>
+      <textarea class="my-2" name="commentPost" rows="3" cols="40" form="commentPost" id="commentContent">Post Comment</textarea>
       <div class="form-group">
         <button class="btn btn-primary" type="submit" id="postComment">Post
           Comment</button>

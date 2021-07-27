@@ -1,3 +1,29 @@
 .hidden {
     display: none;
 }
+
+#cardHead {
+    background-color: rgb(177, 167, 154);
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.card-body {
+    background-color: rgb(237, 244, 252);
+}
+
+#commentHead {
+    background-color: rgb(231, 221, 209);
+}
+
+#titleLink {
+    color: black;
+
+}
+
+/* #createBtn {
+    background-color: lightslategrey;
+    border-radius: 15px;
+} */
