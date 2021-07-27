@@ -3,32 +3,32 @@ const Blog = require('./blog');
 const Comment = require('./comment')
 
 Blog.belongsTo(User, {
-    foreignKey: "userId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 
 User.hasMany(Blog, {
-    foreignKey: "userId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 
 Comment.belongsTo(User, {
-    foreignKey: "userId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 
 User.hasMany(Comment, {
-    foreignKey: "userId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 
 Comment.belongsTo(Blog, {
-    foreignKey: "blogId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 
 Blog.hasMany(Comment, {
-    foreignKey: "blogId",
+    foreignKey: { allowNull: false },
     onDelete: "CASCADE"
 })
 

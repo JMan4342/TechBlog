@@ -5,6 +5,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async function (req, res) {
   try {
     const blogData = await Blog.findAll({
+      include: [{model: User}, ]
       // attributes: { exclude: ['password'] },
       // order: [['username', 'ASC']],
     });
@@ -91,7 +92,10 @@ router.get("/postDetails/:id", async function (req, res) {
   // }
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: { model: Comment },
+      include: [
+        { model: Comment, include: [{ model: User }] },
+        { model: User },
+      ]
     });
     console.log(blogData.get().comments)
     const blog = blogData.get({ plain: true });

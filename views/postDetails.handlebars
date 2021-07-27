@@ -1,7 +1,7 @@
 <div id="blogDetails">
   <header>
     <h2>{{blog.title}}</h2>
-    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
+    <p>Posted by {{user.username}} on {{blog.date}}</p>
   </header>
   <main>
     <p>{{blog.content}}</p>
@@ -9,20 +9,20 @@
 </div>
 
 <div id="userComment">
-  {{#each comments as |comment|}}
+  {{#each comments}}
     <header>
-      <h3>{{comment.userId}} commented on {{comment.date}}</h3>
+      <h3>{{user.username}} commented on {{date}}</h3>
     </header>
     <main>
-      <p>{{comment.commentContent}}</p>
+      <p>{{commentContent}}</p>
     </main>
   {{/each}}
 </div>
 
 
-{{#each comments}}
+{{!-- {{#each comments}}
     {{comments}}
-  {{/each}}
+  {{/each}} --}}
 
 <form id="commentPost" data-blog-id={{blog.id}}>
   <textarea name="commentPost" form="commentPost" id="commentContent">Enter text here</textarea>

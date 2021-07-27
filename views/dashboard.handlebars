@@ -2,16 +2,16 @@
 <div id="myPost">
   <a href="../newPost">Create New Post</a>
 
-  {{#each blogs as |blog|}}
+  {{#each blogs}}
     <header>
       <div>
-        <a href="/editPost/{{blog.id}}">{{blog.title}}</a>
+        <a href="/editPost/{{id}}">{{title}}</a>
         <p>Click to edit</p>
       </div>
-      <p>Posted by {{blog.userId}} on {{blog.date}}</p>
+      <p>Posted by {{user.username}} on {{date}}</p>
     </header>
     <main>
-      <p>{{blog.content}}</p>
+      <p>{{content}}</p>
     </main>
   {{/each}}
 </div>

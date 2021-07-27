@@ -14,29 +14,28 @@ Comment.init(
     commentContent: {
       type: DataTypes.TEXT,
       allowNull: false,
-      // unique: true,
     },
     date: {
       type: DataTypes.DATEONLY,
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id'
-      },
-    },
-    blogId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'blog',
-        key: 'id',
-      },
-    },
+    // userId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id'
+    //   },
+    // },
+    // blogId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'blog',
+    //     key: 'id',
+    //   },
+    // },
 
   },
   {

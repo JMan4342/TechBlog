@@ -1,11 +1,11 @@
 <div id="blogPosts">
-  {{#each blogs as |blog|}}
+  {{#each blogs}}
   <header>
-    <a href='/postDetails/{{blog.id}}'>{{blog.title}}</a>
-    <p>Posted by {{blog.userId}} on {{blog.date}}</p>
+    <a href='/postDetails/{{id}}'>{{title}}</a>
+    <p>Posted by {{user.username}} on {{date}}</p>
   </header>
   <main>
-    <p>{{blog.content}}</p>
+    <p>{{content}}</p>
   </main>
   {{/each}}
 </div>
