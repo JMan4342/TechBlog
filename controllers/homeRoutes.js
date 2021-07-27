@@ -33,6 +33,7 @@ router.get("/dashboard", async function (req, res) {
   }
   const blogData = await Blog.findAll({
     where: { userId: req.session.user_id },
+    include: [{model: User},]
   });
   const blogs = blogData.map((project) => project.get({ plain: true }));
   console.log(blogs);
@@ -59,7 +60,10 @@ router.get("/editPost/:id", async function (req, res) {
   }
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: { model: Comment },
+      include: [
+        { model: User },
+        { model: Comment },
+      ]
     });
     res.render("editPost", {
       blog: blogData.get(),
