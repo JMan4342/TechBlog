@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
-const session = require('express-session');
+const session = require("express-session");
 // const Handlebars = require("handlebars");
 const { Sequelize } = require("sequelize");
 const mysql = require("mysql2");
@@ -25,6 +25,8 @@ const sess = {
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
+    checkExpirationInterval: 15 * 60 * 1000,
+    expiration: 1 * 60 * 60 * 1000,
   }),
 };
 
