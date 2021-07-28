@@ -10,10 +10,18 @@ With the tech blog application, multiple users will be able to contribute and sh
 
 ## Table of Contents
 
+- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [License](#license)
 - [Resources](#resources)
+
+
+## Deployment
+
+You can find the application deployed on Heroku through the following link.
+
+https://tech-blog0713.herokuapp.com/
 
 
 ## Contributing
@@ -25,7 +33,11 @@ You can find the project at https://github.com/JMan4342/TechBlog.
 
 ## Testing
 
-Below you will find a link to a video showing the application in action.
+Below you will find two links demonstrating the application.
+
+https://drive.google.com/file/d/1u8RDp9PC566-qbyC94ho-UqrTS1hfn_l/view?usp=sharing
+
+https://drive.google.com/file/d/1xW4gtvAELjReoiXh1vxYSIdexjUiJBB0/view?usp=sharing
 
 
 

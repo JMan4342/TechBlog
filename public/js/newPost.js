@@ -1,6 +1,5 @@
 console.log("hello");
 const postFormHandler = async (e) => {
-
   e.preventDefault();
 
   console.log("inside function");

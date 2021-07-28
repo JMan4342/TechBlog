@@ -20,28 +20,10 @@ Comment.init(
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
-    // userId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id'
-    //   },
-    // },
-    // blogId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'blog',
-    //     key: 'id',
-    //   },
-    // },
-
   },
   {
     sequelize,
     freezeTableName: true,
-    // timestamps: false,
     modelName: "comment",
   }
 );

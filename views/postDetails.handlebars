@@ -2,7 +2,10 @@
   <div id="blogDetails">
     <header class="row justify-content-between px-3" id="cardHead">
       <h2 class="card-title col-4">{{blog.title}}</h2>
-      <p class="col-4 text-end my-auto">Posted by <b>{{blog.user.username}}</b> on <i>{{blog.date}}</i></p>
+      <p class="col-4 text-end my-auto">Posted by
+        <b>{{blog.user.username}}</b>
+        on
+        <i>{{blog.date}}</i></p>
     </header>
     <main class="card-body border-dark">
       <p>{{blog.content}}</p>
@@ -12,7 +15,9 @@
   <div id="userComment">
     {{#each comments}}
       <header id="commentHead">
-        <p class="card-subtitle px-2"><b>{{user.username}}</b> commented on <i>{{date}}</i></p>
+        <p class="card-subtitle px-2"><b>{{user.username}}</b>
+          commented on
+          <i>{{date}}</i></p>
       </header>
       <main>
         <p class="card-body">{{commentContent}}</p>
@@ -22,10 +27,20 @@
 
   {{#if logged_in}}
     <form class="mx-3" id="commentPost" data-blog-id={{blog.id}}>
-      <textarea class="my-2" name="commentPost" rows="3" cols="40" form="commentPost" id="commentContent">Post Comment</textarea>
+      <textarea
+        class="my-2"
+        name="commentPost"
+        rows="3"
+        cols="40"
+        form="commentPost"
+        id="commentContent"
+      >Post Comment</textarea>
       <div class="form-group">
-        <button class="btn btn-secondary btn-sm mx-3 my-2" type="submit" id="postComment">Post
-          Comment</button>
+        <button
+          class="btn btn-secondary btn-sm mx-3 my-2"
+          type="submit"
+          id="postComment"
+        >Post Comment</button>
       </div>
     </form>
   {{/if}}

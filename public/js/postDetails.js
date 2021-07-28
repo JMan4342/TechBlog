@@ -1,15 +1,7 @@
 console.log("hello");
 
-// const withAuth = require("../utils/auth");
-
 const commentFormHandler = async (e) => {
-
   e.preventDefault();
-  //   if (!req.session.logged_in) {
-  //   res.redirect("login");
-  //   return;
-  // }
-
 
   console.log("inside function");
 
@@ -17,7 +9,6 @@ const commentFormHandler = async (e) => {
   const blogId = document.getElementById("commentPost").dataset.blogId;
 
   if (commentContent) {
-
     const response = await fetch("/api/comment/post/", {
       method: "POST",
       body: JSON.stringify({
@@ -32,6 +23,8 @@ const commentFormHandler = async (e) => {
       alert("Comment failed to post");
     }
   }
-}
+};
 
-document.getElementById("postComment").addEventListener("click", commentFormHandler);
+document
+  .getElementById("postComment")
+  .addEventListener("click", commentFormHandler);
