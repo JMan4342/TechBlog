@@ -5,21 +5,15 @@
 
 ## Description
 
-
+With the tech blog application, multiple users will be able to contribute and share their findings when it comes to technology.  By utilizing the express-session npm package, each user will be able to create their own account that will allow them to write their own blog post, make any necessary edits to any of their posts, delete any post and its corresponding comment, and comment on other users' blog post allowing further collaboration.  If a user is not logged into the tech blog site, they will still be able to view other user blog post and their corresponding comments, but will not be able to leave any comments.  To further help the user of the tech blog site to determine the relevance and credibility of a post or comment, each one is stamped with the username and date of the post.  
 
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [License](#license)
 - [Resources](#resources)
-
-
-## Installation
-
-
 
 
 ## Contributing
@@ -31,7 +25,7 @@ You can find the project at https://github.com/JMan4342/TechBlog.
 
 ## Testing
 
-Below you will find two links to videos showing the application in action in VS Code and Insomnia.
+Below you will find a link to a video showing the application in action.
 
 
 
